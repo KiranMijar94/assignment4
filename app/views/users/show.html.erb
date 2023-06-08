@@ -1,0 +1,13 @@
+<h1><%= @user.username %></h1>
+<h2><%= @user.password %></h2>
+<h2><%= @user.email %></h2>
+
+<p>
+   <strong>Created At:</strong> <%= @user.created_at %><br />
+   <strong>Updated At: </strong> <%= @user.updated_at %><br />
+</p>
+
+<hr />
+
+<%= link_to "Signup new user", {:action => 'new' }, :class => "btn btn-primary btn-lg"%><br/><br/>
+<%= link_to 'Back', {:action => 'index'}, :class => "btn btn-primary btn-lg" %>

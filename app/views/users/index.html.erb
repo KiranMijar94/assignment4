@@ -1,0 +1,16 @@
+<% if @current_user && @current_user["username"] == "Admin" %>  
+  <% if @users.blank? %>
+  <p>There are not any users currently in the system.</p>
+  <% else %>
+  <h1>Signed Up Users</h1>
+
+  <ul id = "users">
+    <% @users.each do |c| %>
+    <li><%= link_to c.username, {:action => 'show', :id => c.username} -%></li>
+    <% end %>
+  </ul>
+
+  <% end %>
+<% else %>
+  <% controller.redirect_to "/sessions/new"%>
+<% end %>
